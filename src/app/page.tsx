@@ -1,6 +1,7 @@
 "use client";
 
 import CanvasScroller from "@/components/CanvasScroller";
+import ProductShowcase from "@/components/ProductShowcase";
 import { motion } from "framer-motion";
 
 export default function Home() {
@@ -113,6 +114,32 @@ export default function Home() {
           </motion.div>
         </section>
 
+        <ProductShowcase />
+
+        {/* Section 7: About the Drink */}
+        <section
+          id="about"
+          className="relative min-h-[50vh] flex flex-col justify-center items-center text-center px-4 py-24 sm:py-32 bg-redbull-black z-20"
+        >
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.8 }}
+            className="max-w-4xl mx-auto"
+          >
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white mb-8">
+              Premium Energy.
+            </h2>
+            <div className="w-24 h-1 bg-redbull-blue-electric mx-auto mb-8 glow-blue rounded-full"></div>
+            <p className="text-lg sm:text-xl md:text-2xl text-white/80 font-medium leading-relaxed mb-6">
+              Red Bull Energy Drink is appreciated worldwide by top athletes, busy professionals, university students, and travelers on long journeys.
+            </p>
+            <p className="text-lg sm:text-xl md:text-2xl text-white/80 font-medium leading-relaxed">
+              Formulated with high-quality ingredients including <span className="text-redbull-blue-electric font-semibold glow-blue">Caffeine</span>, <span className="text-redbull-yellow font-semibold drop-shadow-[0_0_10px_rgba(255,210,0,0.8)]">Taurine</span>, B-Group Vitamins, and Real Alpine Water, it vitalizes body and mind.
+            </p>
+          </motion.div>
+        </section>
 
       </div>
     </main>

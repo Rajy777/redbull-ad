@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, useScroll } from "framer-motion";
+import Image from "next/image";
 
 export default function Navbar() {
     const { scrollY } = useScroll();
@@ -22,19 +23,33 @@ export default function Navbar() {
             transition={{ duration: 0.8, ease: "easeOut" }}
         >
             {/* Left: Logo */}
-            <div className="text-lg md:text-xl font-bold tracking-tighter text-white cursor-pointer hover:text-redbull-red transition-colors whitespace-nowrap">
-                RED BULL
-            </div>
+            <a href="#story" className="relative w-32 md:w-40 h-10 md:h-12 cursor-pointer hover:opacity-80 transition-opacity flex items-center shrink-0 mt-1">
+                <Image
+                    src="/images/redbull-logo.svg"
+                    alt="Red Bull Logo"
+                    fill
+                    className="object-contain object-left"
+                    sizes="160px"
+                    priority
+                />
+            </a>
 
             {/* Center: Links */}
             <div className="hidden md:flex items-center gap-8 text-sm font-semibold tracking-tight text-white/80">
-                {["Story", "Energy", "Transformation", "Chaos", "Finale"].map((link) => (
+                {[
+                    { name: "Home", href: "#story" },
+                    { name: "Shopping", href: "#shopping" },
+                    { name: "About", href: "#about" },
+                    { name: "Events", href: "https://www.redbull.com/int-en/events", external: true }
+                ].map((link) => (
                     <a
-                        key={link}
-                        href={`#${link.toLowerCase()}`}
+                        key={link.name}
+                        href={link.href}
+                        target={link.external ? "_blank" : undefined}
+                        rel={link.external ? "noopener noreferrer" : undefined}
                         className="hover:text-white transition-colors relative group"
                     >
-                        {link}
+                        {link.name}
                         <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-redbull-blue-electric group-hover:w-full transition-all duration-300 glow-blue"></span>
                     </a>
                 ))}
