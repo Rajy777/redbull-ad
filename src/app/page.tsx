@@ -113,26 +113,7 @@ export default function Home() {
           </motion.div>
         </section>
 
-        {/* Section 7: FINAL CTA */}
-        <section className="h-[100vh] flex flex-col justify-center items-center text-center px-4 relative">
-          <motion.div
-            initial={{ y: 100, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ once: false, amount: 0.5 }}
-            transition={{ duration: 0.8 }}
-            className="flex flex-col items-center gap-4 sm:gap-6 p-8 sm:p-12 rounded-[2rem] sm:rounded-full backdrop-blur-xl bg-black/50 border border-white/10 shadow-[0_0_50px_rgba(255,31,45,0.3)] w-full max-w-2xl"
-          >
-            <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight text-center">
-              Ready for the leap?
-            </h3>
-            <button className="bg-redbull-red hover:bg-[#ff4050] text-white text-lg sm:text-xl md:text-2xl font-black uppercase tracking-widest px-8 sm:px-12 py-4 sm:py-5 rounded-full shadow-[0_0_30px_rgba(255,31,45,0.6)] hover:shadow-[0_0_50px_rgba(255,31,45,1)] transition-all transform hover:scale-110 active:scale-95 duration-200 w-full sm:w-auto">
-              Drink the Energy
-            </button>
-            <p className="text-white/60 font-semibold tracking-wider uppercase text-xs sm:text-sm mt-2 sm:mt-4 text-center">
-              Red Bull gives you wings.
-            </p>
-          </motion.div>
-        </section>
+
       </div>
     </main>
   );
