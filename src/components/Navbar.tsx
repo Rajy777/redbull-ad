@@ -15,14 +15,14 @@ export default function Navbar() {
 
     return (
         <motion.nav
-            className={`fixed top-0 left-0 w-full z-50 transition-colors duration-300 h-[60px] flex items-center justify-between px-8 ${isScrolled ? "bg-redbull-black/75 backdrop-blur-md" : "bg-transparent"
+            className={`fixed top-0 left-0 w-full z-50 transition-colors duration-300 h-[60px] flex items-center justify-between px-4 md:px-8 ${isScrolled ? "bg-redbull-black/75 backdrop-blur-md" : "bg-transparent"
                 }`}
             initial={{ y: -100 }}
             animate={{ y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
         >
             {/* Left: Logo */}
-            <div className="text-xl font-bold tracking-tighter text-white cursor-pointer hover:text-redbull-red transition-colors">
+            <div className="text-lg md:text-xl font-bold tracking-tighter text-white cursor-pointer hover:text-redbull-red transition-colors whitespace-nowrap">
                 RED BULL
             </div>
 
@@ -41,7 +41,7 @@ export default function Navbar() {
             </div>
 
             {/* Right: CTA */}
-            <button className="bg-redbull-red hover:bg-redbull-red/90 text-white font-bold text-sm tracking-tight px-6 py-2 rounded-full shadow-[0_0_15px_rgba(255,31,45,0.4)] hover:shadow-[0_0_25px_rgba(255,31,45,0.8)] transition-all transform hover:scale-105">
+            <button className="bg-redbull-red hover:bg-redbull-red/90 text-white font-bold text-xs md:text-sm tracking-tight px-4 md:px-6 py-2 rounded-full shadow-[0_0_15px_rgba(255,31,45,0.4)] hover:shadow-[0_0_25px_rgba(255,31,45,0.8)] transition-all transform hover:scale-105 whitespace-nowrap">
                 Drink the Energy
             </button>
         </motion.nav>
